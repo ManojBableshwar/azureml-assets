@@ -102,7 +102,7 @@ def insert_comments_under_input(doc, data):
 def add_inputs(doc, component):
     doc.add_heading("Inputs ", level=2)
     headers = ['Name', 'Description', 'Type', 'Default', 'Optional', 'Enum']
-    rows = [[]]
+    rows = []
     if component.ca.items.get('inputs') is not None:
         doc = insert_comments_under_input(doc, component.ca.items.get('inputs'))
 
@@ -119,7 +119,7 @@ def add_inputs(doc, component):
             rows.append(row)
             doc.add_table(headers, rows)
             doc = insert_comments_between_inputs(doc, v)
-            rows = [[]]  
+            rows = []  
         else:
             rows.append(row)
 
@@ -130,7 +130,7 @@ def add_inputs(doc, component):
 def add_outputs(doc, component):
     doc.add_heading("Outputs ", level=2)
     headers = ['Name', 'Description', 'Type']
-    rows = [[]]
+    rows = []
     if component.ca.items.get('outputs') is not None:
         doc = insert_comments_under_input(doc, component.ca.items.get('outputs'))
 
@@ -144,7 +144,7 @@ def add_outputs(doc, component):
             rows.append(row)
             doc.add_table(headers, rows)
             doc = insert_comments_between_inputs(doc, v)
-            rows = [[]]      
+            rows = []      
         else:
             rows.append(row)
 

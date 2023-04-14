@@ -24,7 +24,6 @@ LoRA reduces the number of trainable parameters by learning pairs of rank-decomp
 
 | Name               | Description                                                                         | Type    | Default | Optional | Enum              |
 | ------------------ | ----------------------------------------------------------------------------------- | ------- | ------- | -------- | ----------------- |
-|  |
 | apply_lora         | lora enabled                                                                        | string  | false   | True     | ['true', 'false'] |
 | merge_lora_weights | if set to true, the lora trained weights will be merged to base model before saving | string  | true    | True     | ['true', 'false'] |
 | lora_alpha         | lora attention alpha                                                                | integer | 128     | True     |                   |
@@ -35,7 +34,6 @@ Training parameters
 
 | Name                        | Description                                                                                                                                                                                                                                                                        | Type    | Default  | Optional | Enum                                                                                           |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- | -------- | ---------------------------------------------------------------------------------------------- |
-|  |
 | num_train_epochs            | training epochs                                                                                                                                                                                                                                                                    | integer | 1        | True     |                                                                                                |
 | max_steps                   | If set to a positive number, the total number of training steps to perform. Overrides 'epochs'. In case of using a finite iterable dataset the training may stop before reaching the set number of steps when all data is exhausted.                                               | integer | -1       | True     |                                                                                                |
 | per_device_train_batch_size | Train batch size                                                                                                                                                                                                                                                                   | integer | 1        | True     |                                                                                                |
@@ -69,7 +67,6 @@ Early Stopping Parameters
 
 | Name                     | Description                                                                                  | Type    | Default | Optional | Enum              |
 | ------------------------ | -------------------------------------------------------------------------------------------- | ------- | ------- | -------- | ----------------- |
-|  |
 | apply_early_stopping     | Enable early stopping                                                                        | string  | false   | True     | ['true', 'false'] |
 | early_stopping_patience  | Stop training when the specified metric worsens for early_stopping_patience evaluation calls | integer | 1       | True     |                   |
 | early_stopping_threshold | Denotes how much the specified metric must improve to satisfy early stopping conditions      | number  | 0.0     | True     |                   |
@@ -78,7 +75,6 @@ Deepspeed Parameters
 
 | Name            | Description                                        | Type     | Default | Optional | Enum              |
 | --------------- | -------------------------------------------------- | -------- | ------- | -------- | ----------------- |
-|  |
 | apply_deepspeed | If set to true, will enable deepspeed for training | string   | false   | True     | ['true', 'false'] |
 | deepspeed       | Deepspeed config to be used for finetuning         | uri_file |         | True     |                   |
 
@@ -86,21 +82,18 @@ ONNX Runtime Parameters ONNX Runtime is a cross-platform machine-learning model 
 
 | Name      | Description                                       | Type   | Default | Optional | Enum              |
 | --------- | ------------------------------------------------- | ------ | ------- | -------- | ----------------- |
-|  |
 | apply_ort | If set to true, will use the ONNXRunTime training | string | false   | True     | ['true', 'false'] |
 
 MLFlow Parameters An MLflow Model is AzureML's recommended format for packaging models. MLflow packaging enables interoperability with environments that support MLflow deployments. AzureML online and batch inference endpoints support no-code-deployments for MLflow packaged models.
 
 | Name                 | Description                                                      | Type   | Default | Optional | Enum              |
 | -------------------- | ---------------------------------------------------------------- | ------ | ------- | -------- | ----------------- |
-|  |
 | save_as_mlflow_model | If set to true, will save as mlflow model with pyfunc as flavour | string | true    | True     | ['true', 'false'] |
 
 Data and Model inputs
 
 | Name                  | Description                                                                                            | Type       | Default | Optional | Enum |
 | --------------------- | ------------------------------------------------------------------------------------------------------ | ---------- | ------- | -------- | ---- |
-|  |
 | preprocess_output     | output folder of preprocessor containing encoded train.jsonl valid.jsonl and the model pretrained info | uri_folder |         | False    |      |
 | model_selector_output | output folder of model selector containing model metadata like config, checkpoints, tokenizer config   | uri_folder |         | False    |      |
 
